@@ -1,35 +1,42 @@
 import { Users } from "@/models/admin/table";
 
 export default class Card {
-  users: Users;
+  getUsers: { data: Users; error: string | null; loading: boolean }
+  getUsersLoading: boolean | undefined;
 
   constructor(
-    users: [
-      {
-        id: 0;
-        name: "";
-        username: "";
-        email: "";
-        address: {
-          street: "";
-          suite: "";
-          city: "";
-          zipcode: "";
-          geo: {
-            lat: "";
-            lng: "";
-          };
-        };
-        phone: "";
-        website: "";
-        company: {
+    getUsers: {
+      data: [
+        {
+          id: 0;
           name: "";
-          catchPhrase: "";
-          bs: "";
-        };
-      }
-    ]
+          username: "";
+          email: "";
+          address: {
+            street: "";
+            suite: "";
+            city: "";
+            zipcode: "";
+            geo: {
+              lat: "";
+              lng: "";
+            };
+          };
+          phone: "";
+          website: "";
+          company: {
+            name: "";
+            catchPhrase: "";
+            bs: "";
+          };
+        }
+      ];
+      error: "";
+      loading: false;
+    },
+    getUsersLoading: false
   ) {
-    this.users = users;
+    this.getUsers = getUsers;
+    this.getUsersLoading = getUsersLoading
   }
 }

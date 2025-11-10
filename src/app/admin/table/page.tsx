@@ -1,18 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { TableComponent } from "@/components/table";
 import type { ColumnsType } from "antd/es/table";
 import { Tag, Button, Space, message } from "antd";
 import { AiOutlineEdit, AiOutlineDelete, AiOutlineEye } from "react-icons/ai";
 import { connect } from "react-redux";
 import { actions as dashboardActions } from "@/state/card";
-import { getUsers, User, Users } from "@/models/admin/table";
+import { Users } from "@/models/admin/table";
+import Card from "@/state/card/model";
 
 interface AdminTablePage {
   getUsers: () => {};
   getUsersData: Users;
-  getUsersDataLoad: boolean;
+  getUsersDataLoad?: boolean;
 }
 
 const AdminTablePage = ({
@@ -137,7 +138,7 @@ const AdminTablePage = ({
 };
 
 const enhancer = connect(
-  (state: { card: getUsers }) => ({
+  (state: { card: Card }) => ({
     getUsersData: state.card.getUsers.data,
     getUsersDataLoad: state.card.getUsersLoading,
   }),
