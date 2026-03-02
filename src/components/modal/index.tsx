@@ -11,7 +11,7 @@ interface ReusableModalProps {
   footer?: any;
   confirmLoading?: boolean;
   centered?: boolean;
-  destroyOnClose?: boolean;
+  // destroyOnClose?: boolean;
   maskClosable?: boolean;
 }
 
@@ -25,7 +25,7 @@ const ReusableModal = ({
   footer,
   confirmLoading = false,
   centered = true,
-  destroyOnClose = true,
+  // destroyOnClose = true,
   maskClosable = false,
 }: ReusableModalProps) => {
   return (
@@ -38,7 +38,7 @@ const ReusableModal = ({
       footer={footer}
       confirmLoading={confirmLoading}
       centered={centered}
-      destroyOnClose={destroyOnClose}
+      // destroyOnClose={destroyOnClose}
       maskClosable={maskClosable}
     >
       {children}

@@ -8,7 +8,7 @@ interface ReusableDrawerProps {
   placement?: "left" | "right" | "top" | "bottom";
   children?: any;  
   footer?: any;  
-  destroyOnClose?: boolean;
+  // destroyOnClose?: boolean;
   maskClosable?: boolean;
 }
 
@@ -20,7 +20,7 @@ const ReusableDrawer = ({
   placement = "right",
   children,
   footer,
-  destroyOnClose = true,
+  // destroyOnClose = true,
   maskClosable = false,
 }: ReusableDrawerProps) => {
   return (
@@ -31,7 +31,7 @@ const ReusableDrawer = ({
       width={width}
       placement={placement}
       footer={footer}
-      destroyOnClose={destroyOnClose}
+      // destroyOnClose={destroyOnClose}
       maskClosable={maskClosable}
     >
       {children}
